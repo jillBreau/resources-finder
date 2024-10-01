@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import localFont from "next/font/local";
 import { ClerkProvider, SignedIn, UserButton } from '@clerk/nextjs'
 import "./globals.css";

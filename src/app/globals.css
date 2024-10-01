@@ -5,12 +5,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --off-foreground: #2c2c2c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --off-foreground: #b5b5b5;
   }
 }
 
@@ -26,6 +28,15 @@ header {
 
 footer {
   background: var(--background);
+}
+
+a {
+  color: var(--off-foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 @layer utilities {

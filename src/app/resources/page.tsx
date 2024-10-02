@@ -1,4 +1,4 @@
-import { Resource } from '@/types/resources';
+import type { Resource } from '@/types/resources';
 import { createClient } from '@/utils/supabase/server';
 
 export default async function Page() {
@@ -47,27 +47,39 @@ export default async function Page() {
           </div>
           <span>{description}</span>
           <div>
-            {participantDemographics?.map((participantDemographic) => (
-              <span>{`(${participantDemographic}) `}</span>
-            ))}
+            {
+            participantDemographics
+              ?.map((participantDemographic) => (
+                <span key={`${id}-${participantDemographic}`}>{`(${participantDemographic}) `}</span>
+              ))
+            }
           </div>
           <div>
-            {volunteerDemographics?.map((volunteerDemographic) => (
-              <span>{`[${volunteerDemographic}] `}</span>
-            ))}
+            {
+              volunteerDemographics
+                ?.map((volunteerDemographic) => (
+                  <span key={`${id}-${volunteerDemographic}`}>{`[${volunteerDemographic}] `}</span>
+                ))
+            }
           </div>
           <div className="flex space-x-2">
             <span>{region}</span>
             <div>
-              {formats?.map((format) => (
-                <span>{`(${format}) `}</span>
-              ))}
+              {
+                formats
+                  ?.map((format) => (
+                    <span key={`${id}-${format}`}>{`(${format}) `}</span>
+                  ))
+              }
             </div>
           </div>
           <div>
-            {categories?.map((category) => (
-              <span>{`[${category}] `}</span>
-            ))}
+            {
+              categories
+                ?.map((category) => (
+                  <span key={`${id}-${category}`}>{`[${category}] `}</span>
+                ))
+            }
           </div>
           <span>----</span>
         </div>

@@ -28,7 +28,7 @@ const PERSON_GROUPS = [
   'Not a member of the above groups',
 ]
 
-const PERSON_DEMOGRAPHICS = [
+export const PERSON_DEMOGRAPHICS = [
   ...PERSON_AGES,
   ...PERSON_OCCUPATIONS,
   ...PERSON_GENDERS,
@@ -39,7 +39,7 @@ const PERSON_DEMOGRAPHICS = [
 type PersonDemographic = typeof PERSON_DEMOGRAPHICS[number]
 type PersonDemographics = PersonDemographic[]
 
-const REGIONS = [
+export const REGIONS = [
   'NL',
   'Atlantic Canada',
   'Canada',
@@ -48,7 +48,7 @@ const REGIONS = [
 
 type Region = typeof REGIONS[number]
 
-const FORMATS = [
+export const FORMATS = [
   'Virtual',
   'In-person',
 ] as const
@@ -56,7 +56,7 @@ const FORMATS = [
 type Format = typeof FORMATS[number]
 type Formats = Format[]
 
-const CATEGORIES = [
+export const CATEGORIES = [
   'Tech education',
   'Tech community',
   'Tech mentorship',
@@ -87,8 +87,8 @@ export type Resource = {
   categories: Categories
 }
 
-type NewResource = Resource & {
-  reviewed: boolean
-  deprecated: boolean
-  submittedBy?: string
-}
+// type NewResource = Resource & {
+//   reviewed: boolean
+//   deprecated: boolean
+//   submittedBy?: string
+// }
